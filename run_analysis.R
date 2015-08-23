@@ -4,8 +4,9 @@
 
 run_analysis <- function() 
 {
-    # 1.Merges the training and the test sets to create one data set.
-        setwd(paste(Sys.getenv("USERPROFILE"), "\\Documents\\GitHub\\ProgrammingAssignment_cleandata\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset", sep=""))
+        library(dplyr)
+        # 1.Merges the training and the test sets to create one data set.
+        setwd(paste(Sys.getenv("USERPROFILE"), "\\Documents\\GitHub\\GettingCleaningData\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset", sep=""))
         measurements <- read.csv("features.txt", header=F, stringsAsFactors = F, sep=" ")
         measurement_cols <- measurements$V2   # only grab the second column - it contains all the column names for our measurements
         activities <- read.csv("activity_labels.txt", header=F, stringsAsFactors = F, sep=" ")
